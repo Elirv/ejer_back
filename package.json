@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/index.js"
+    "start": "nodemon ./src/index.js",
+    "dev": "nodemon ./src/index.js\" \"json-server --watch ./src/database/db.json --port 4003\"",
+    "server": "json-server --watch ./src/database/db.json --port 4003"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +15,8 @@
   "devDependencies": {
     "express": "^4.18.2",
     "mongoose": "^6.8.3",
-    "standard": "^17.0.0"
+    "standard": "^17.0.0",
+    "validator": "^13.7.0"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
