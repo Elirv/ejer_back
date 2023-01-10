@@ -2,19 +2,19 @@ const express = require('express')
 //traernos el router de express
 const router = express.Router()
 const musicController = require('../controllers/music.controllers')
+// o destructuring = const { checkParam, doubleCheckParam } = require('../controllers/music.controllers')
 const chechMiddleware = require("../middlewares/check.middleware") //importamos elmiddleware
 
 router
     //Obtener los detalles de una cuenta
     .get("/", musicController.allAlbums) //y deveria funcionar igual
     //Crear una cuenta
-    .post("/:id", chechMiddleware.chechParam, musicController.createAlbum) //kiero k aki le haga el chekeo
-    //como segundo parametro se masa el middleware k se ejecuta primero luego el siguiente
-    //Actualizar una cuenta
-    //.patch
-    //.put
+    .post("/", chechMiddleware.chechParam, musicController.createAlbum) //kiero k aki le haga el chekeo
+    //como segundo parametro se pasa el middleware k se ejecuta primero luego el siguiente
+    //Actualizar una cuenta, el put mas o menos es el patch
+    .patch('/:id', checkParam, doubleCheckParam, musicController.updateAlbum)
     //Eliminar una cuenta
-    //.delete()
+    .delete('/:id', checkParam, doubleCheckParam, musicController.deleteAlbum)
 
 //esto se va al controller
 // .get('/', (req, res) => {
