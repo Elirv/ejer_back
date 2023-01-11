@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/index.js",
-    "dev": "nodemon ./src/index.js\" \"json-server --watch ./src/database/db.json --port 4003\"",
-    "server": "json-server --watch ./src/database/db.json --port 4003"
+    
+    "dev": "nodemon ./src/index.js"
+    
   },
   "keywords": [],
   "author": "",
