@@ -1,6 +1,6 @@
 const userModel = require('../models/user.models')
 
-async function createUser(req, res, next) {
+async function createUser (req, res, next) {
     const {firstName, email, password} = req.body
     try {
         const user = await userModel.create({

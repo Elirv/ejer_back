@@ -3,7 +3,8 @@
 const userRouter = require('express').Router()
 const userController = require('../controllers/user.controller')
 
-userRouter.get("/", userController.createUser)
+userRouter.post("/", userController.createUser)
+// userRouter.get("/", userController.createUser)
 
 //esto va en el controller:
     // .get("/", (req, res) => {
