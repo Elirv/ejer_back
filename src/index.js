@@ -1,7 +1,5 @@
 //const dotenv = require('dotenv')
 //dotenv.config() //acceder a las variablesde entorno get, post, put...
-//const albumRouter = require("./routes/music.routes")
-//const userRouter = require("./routes/user.routes")
 const connect = require('./database/connect')
 const app = require('./server');
 const config = require('./config/config')

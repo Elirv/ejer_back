@@ -22,10 +22,10 @@ const CONFIG = {
     //conectamos nuestra URI a la Base de datos
     db: {
       uri: process.env.MONGODB_URI_CLUSTER,
-    }, //nuestro archivo de.json ya no  nos hace falta 
+    } //nuestro archivo de.json ya no  nos hace falta 
     //creamos el archivo connect.js
   },
-  production: {
+  production: { // y otro para testear
     app: {
       PORT: process.env.PORT || 4001,
     },
@@ -38,8 +38,8 @@ const CONFIG = {
     },
     db: {
       url: "http://localhost:4002/albums",
-    },
-  },
-};
+    }
+  }
+}
 
 module.exports = CONFIG[ENV];

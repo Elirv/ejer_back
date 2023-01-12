@@ -8,9 +8,15 @@ const userRoutes = require('./routes/user.routes')
 
 const app = express()
 
+const myLogger = function (req, ser, next){
+    console.log('Logged')
+    next()
+}
+
 app.use(morgan('dev'))
 app.use(helmet())
 app.use(json()) //para que pueda entender los jaosn de las peiciones
+app.use(myLogger)
 app.use('/album', albumsRoutes) //cuanda haga la peticion a album por ejemplo, entonces ejecutará todos los metdos de las rutas
 // app.use('/author', authorRoutes)
 app.use('/user', userRoutes)  //ya no van todas las peticiones a album ahora tb van a user
