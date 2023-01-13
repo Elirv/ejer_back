@@ -13,7 +13,7 @@ const app = express()
 //     next()
 // }
 
-app.use(morgan('dev'))
+app.use(morgan('dev')) //dev para k sepa como mostrar los mensajes por consola
 app.use(helmet())
 app.use(json()) //para que pueda entender los jaosn de las peiciones
 // app.use(myLogger)

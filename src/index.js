@@ -1,7 +1,7 @@
 // const express = require('express') //no
 
 const connect = require('./database/connect')
-const app = require('./server'); //algo  no va bien aki
+const app = require('./server');
 const config = require('./config/config')
 
 // const app = express() //no

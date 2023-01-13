@@ -4,7 +4,7 @@ const userRouter = require('express').Router()
 const userController = require('../controllers/user.controller')
 
 userRouter
-    .post("/", userController.createUser)
+    .post("/segundo", userController.createUser)
 // userRouter.get("/", userController.createUser)
 
 //esto va en el controller:

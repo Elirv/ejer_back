@@ -28,6 +28,6 @@ const UserSchema = Schema({
 //aki se meteria el bcrypt
 
 //todo lo anterior lo tenemos k meter en un modelo:
-const UserModel = model("user", UserSchema) //este nombre es una coleccion de la base de datos, en este caso user.
+const UserModel = model("users", UserSchema) //este nombre es una coleccion de la base de datos, en este caso user.
 
 module.exports = UserModel
