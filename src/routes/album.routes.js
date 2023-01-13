@@ -1,20 +1,19 @@
-const express = require('express')
-//traernos el router de express
-const router = express.Router()
-const musicController = require('../controllers/music.controllers')
+// const albumRouter = express.Router()
+const albumRouter = require('express').Router()
+const albumsController = require('../controllers/albums.controller')
 // o destructuring = const { checkParam, doubleCheckParam } = require('../controllers/music.controllers')
-const chechMiddleware = require("../middlewares/check.middleware") //importamos elmiddleware
 
-router
+albumRouter
     //Obtener los detalles de una cuenta
-    .get("/", musicController.allAlbums) //y deveria funcionar igual
+    .get('/', albumsController.getAllAlbums) //y deveria funcionar igual
+    .get('/:id', albumsController.getAlbumByID)
     //Crear una cuenta
-    .post("/", chechMiddleware.chechParam, musicController.createAlbum) //kiero k aki le haga el chekeo
+    .post('/album', albumsController.createAlbum) //kiero k aki le haga el chekeo
     //como segundo parametro se pasa el middleware k se ejecuta primero luego el siguiente
     //Actualizar una cuenta, el put mas o menos es el patch
-    .patch('/:id', checkParam, doubleCheckParam, musicController.updateAlbum)
+    .patch('/:id', albumsController.updateAlbum)
     //Eliminar una cuenta
-    .delete('/:id', checkParam, doubleCheckParam, musicController.deleteAlbum)
+    .delete('/:id', albumsController.deleteAlbum)
 
 //esto se va al controller
 // .get('/', (req, res) => {
@@ -45,4 +44,4 @@ router
 //     }
 // })
 
-module.exports = router
+module.exports = albumRouter

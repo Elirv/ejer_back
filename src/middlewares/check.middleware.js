@@ -1,9 +1,12 @@
 //cuando me manden un id me lo muestren en consola
-function chechParam(req, res, next) {
+async function checkParam(req, res, next) {
     const { id } = req.params
-
-    id && console.log(`the id is ${id}`)
-    next()
+    try {
+        id && console.log(`Check the id ${id}`)
+        next()
+    } catch (error) {
+        next(error)
+    }
 }
 
 async function doubleCheckParam(req, res, next) {

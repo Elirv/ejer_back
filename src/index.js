@@ -1,10 +1,10 @@
-const express = require('express') //no
+// const express = require('express') //no
 
 const connect = require('./database/connect')
-// const app = require('./server'); //algo  no va bien aki
+const app = require('./server'); //algo  no va bien aki
 const config = require('./config/config')
 
-const app = express() //no
+// const app = express() //no
 
 //peticiones fuera enviarlas a rutas
 // app.get('/', (req, res) => {

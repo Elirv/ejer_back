@@ -1,11 +1,11 @@
 const dotenv = require("dotenv");
 const logger = require("loglevel");
 
-dotenv.config();
-
-const ENV = process.env.NODE_ENV || 'development'
+dotenv.config();//acceder a las variablesde entorno get, post, put...
 
 logger.enableAll();
+
+const ENV = process.env.NODE_ENV || 'development'
 
 const CONFIG = {
   development: {
